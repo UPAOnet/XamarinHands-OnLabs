@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+
+  <style name="Theme.Splash" parent="android:Theme.Light">
+    <item name="android:windowBackground">@drawable/splash_screen_fpf</item>
+    <item name="android:windowNoTitle">true</item>
+  </style>
+
+  <style name="Theme.Design.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+  <style name="Theme.Design.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+  <style name="Base.Theme.Design" parent="Theme.AppCompat.Light.NoActionBar">
+    <item name="colorPrimary">#C62828</item>
+    <item name="colorPrimaryDark">#B71C1C</item>
+    <item name="colorAccent">#FFEBEE</item>
+  </style>
+
+</resources>
