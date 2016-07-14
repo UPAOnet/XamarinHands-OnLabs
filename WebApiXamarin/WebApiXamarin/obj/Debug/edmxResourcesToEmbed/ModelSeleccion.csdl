@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BDEventoXamarinModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Equipo">
+    <Key>
+      <PropertyRef Name="equipo_id" />
+    </Key>
+    <Property Name="equipo_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="equipo_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="equipo_fundacion" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="equipo_entrenador" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="equipo_estadio" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="equipo_copas" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Jugador" Relationship="Self.FK_Jugador_Equipo" FromRole="Equipo" ToRole="Jugador" />
+  </EntityType>
+  <EntityType Name="Jugador">
+    <Key>
+      <PropertyRef Name="jugador_id" />
+    </Key>
+    <Property Name="jugador_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="equipo_id" Type="Int32" Nullable="false" />
+    <Property Name="jugador_nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="jugador_foto" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="jugador_fecha" Type="DateTime" Precision="0" />
+    <Property Name="jugador_equipo" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="jugador_posicion" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="jugador_edad" Type="Int32" Nullable="false" />
+    <Property Name="jugador_goles" Type="Int32" />
+    <Property Name="jugador_division" Type="String" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="jugador_numero" Type="Int32" />
+    <NavigationProperty Name="Equipo" Relationship="Self.FK_Jugador_Equipo" FromRole="Jugador" ToRole="Equipo" />
+  </EntityType>
+  <Association Name="FK_Jugador_Equipo">
+    <End Role="Equipo" Type="Self.Equipo" Multiplicity="1" />
+    <End Role="Jugador" Type="Self.Jugador" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipo">
+        <PropertyRef Name="equipo_id" />
+      </Principal>
+      <Dependent Role="Jugador">
+        <PropertyRef Name="equipo_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BDEventoXamarinEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Equipo" EntityType="Self.Equipo" />
+    <EntitySet Name="Jugador" EntityType="Self.Jugador" />
+    <AssociationSet Name="FK_Jugador_Equipo" Association="Self.FK_Jugador_Equipo">
+      <End Role="Equipo" EntitySet="Equipo" />
+      <End Role="Jugador" EntitySet="Jugador" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
