@@ -1,9 +1,6 @@
 ﻿using AppFPF.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using static Newtonsoft.Json.JsonConvert;
 
@@ -11,20 +8,20 @@ namespace AppFPF.Service
 {
     public class APIService
     {
-        const string baseUri = "http://servicexamarin.azurewebsites.net/api/{0}";
+        private const string baseUri = "http://servicexamarin.azurewebsites.net/api/{0}";
 
         #region SpecificMethods
 
-        public async static Task<Equipo> GetTeam()
+        public async static Task<Team> GetTeam()
         {
             var relativeUri = "seleccion";
-            return await GetApi<Equipo>(relativeUri);
+            return await GetApi<Team>(relativeUri);
         }
 
-        public async static Task<Jugador> GetPlayer(int id)
+        public async static Task<Player> GetPlayer(int id)
         {
             var relativeUri = $"seleccion/{id}";
-            return await GetApi<Jugador>(relativeUri);
+            return await GetApi<Player>(relativeUri);
         }
 
         #endregion SpecificMethods

@@ -2110,8 +2110,29 @@ namespace AppFPF.Droid
 			// aapt resource value: 0x7f060046
 			public const int parentPanel = 2131099718;
 			
+			// aapt resource value: 0x7f060085
+			public const int person_name = 2131099781;
+			
+			// aapt resource value: 0x7f060086
+			public const int person_photo = 2131099782;
+			
 			// aapt resource value: 0x7f060029
 			public const int pin = 2131099689;
+			
+			// aapt resource value: 0x7f060087
+			public const int player_club = 2131099783;
+			
+			// aapt resource value: 0x7f060083
+			public const int player_name = 2131099779;
+			
+			// aapt resource value: 0x7f060084
+			public const int player_number = 2131099780;
+			
+			// aapt resource value: 0x7f060082
+			public const int player_photo = 2131099778;
+			
+			// aapt resource value: 0x7f060088
+			public const int player_position = 2131099784;
 			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
@@ -2452,16 +2473,22 @@ namespace AppFPF.Droid
 			public const int notification_template_part_time = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int select_dialog_item_material = 2130903086;
+			public const int PlayerAdapter = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int select_dialog_multichoice_material = 2130903087;
+			public const int PlayerResume = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int select_dialog_singlechoice_material = 2130903088;
+			public const int select_dialog_item_material = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int support_simple_spinner_dropdown_item = 2130903089;
+			public const int select_dialog_multichoice_material = 2130903089;
+			
+			// aapt resource value: 0x7f030032
+			public const int select_dialog_singlechoice_material = 2130903090;
+			
+			// aapt resource value: 0x7f030033
+			public const int support_simple_spinner_dropdown_item = 2130903091;
 			
 			static Layout()
 			{
