@@ -11,6 +11,6 @@ namespace WebApiXamarin.Controllers
         public string Entrenador { get; set; }
         public string Estadio { get; set; }
         public int Copas { get; set; }
-        public virtual ICollection<JugadorModel> JugadorModel { get; set; }
+        public virtual ICollection<JugadorModel> Jugadores { get; set; }
     }
 }
