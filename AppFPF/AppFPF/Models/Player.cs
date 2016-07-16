@@ -13,7 +13,7 @@ namespace AppFPF.Models
         [JsonProperty("Foto")]
         public string Photo { get; set; }
 
-        [JsonProperty("NumeroCamiseta")]
+        [JsonProperty("NumeroJugador")]
         public int Number { get; set; }
 
         [JsonProperty("Posicion")]

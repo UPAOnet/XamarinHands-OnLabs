@@ -23,7 +23,7 @@ namespace AppFPF.Models
         [JsonProperty("Copas")]
         public int CupsCount { get; set; } = 0;
 
-        [JsonProperty("JugadorModel")]
+        [JsonProperty("Jugadores")]
         public List<Player> PlayersList { get; set; } = new List<Player>();
     }
 }
